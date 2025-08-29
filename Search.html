@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search</title>
+    <link rel="stylesheet" href="Search.css">
+    <script src="https://kit.fontawesome.com/abd8dcaad7.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="search-box">
+        <div class="row">
+            <input type="text" placeholder="Search Here" id="input-box" autocomplete="off">
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="result-box">
+        </div>
+    </div>
+</body>
+<script>
+    let keywords = [
+        'How to learn',
+        'Html Tutorials',
+        'CSS Tutorials Videos',
+        'JS Videos',
+        'Soft Suave Technologies',
+    ];
+    var inputbox = document.getElementById("input-box");
+    var resultbox = document.querySelector(".result-box");
+
+    inputbox.onkeyup = function(){
+        let result = [];
+        let input = inputbox.value;
+        if(input.length){
+            result = keywords.filter((keys)=>{
+                return keys.toLowerCase().includes(input.toLowerCase());
+            });
+            console.log(result);
+            
+        }
+        display(result);
+    }
+
+    function display(result){
+        var content = result.map((list)=>{
+            return "<li onclick=selectInput(this)>"+list+"</li>";
+        });
+        resultbox.innerHTML = "<ul>"+content.join('')+"</ul>";
+    }
+
+    function selectInput(list){
+        inputbox.value = list.innerHTML;
+        resultbox.innerHTML ='';
+    }
+
+</script>
+</html>
