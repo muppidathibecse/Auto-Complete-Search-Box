@@ -5,9 +5,10 @@ body{
 .search-box{
     width: 600px;
     margin: 200px auto 0;
-    background-color: white;
-    border-radius: 10px;
+    background-color: red;
+    border-radius: 11px;
 }
+
 .row{
     display: flex;
     align-items: center;
