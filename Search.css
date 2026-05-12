@@ -1,11 +1,11 @@
 body{
-    background-color: #262a2f;
+    background-color: #4591ee;
     color: #333;
 }
 .search-box{
     width: 600px;
     margin: 200px auto 0;
-    background-color: red;
+    background-color: green;
     border-radius: 11px;
 }
 
@@ -14,7 +14,7 @@ body{
     align-items: center;
     justify-content: center;
     margin-left: 20PX;
-    margin-top: 100px;
+    margin-top: 120px;
 }
 input{
     flex: 1;
